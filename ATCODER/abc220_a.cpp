@@ -14,8 +14,8 @@ using namespace std;
 #define HHJN            ios_base::sync_with_stdio(0);cin.tie(0);cout.tie(0);
 #define pera            freopen("inputf.in","r", stdin);freopen("outputf.in","w", stdout)
 #define test            ll t; cin >> t; while(t--){solve();};
-#define yes             cout << "YES\n"
-#define no              cout << "NO\n"
+#define py             cout << "YES\n"
+#define pn              cout << "NO\n"
 #define all(n)          n.begin(), n.end()
 #define uper(n)         transform(n.begin(), n.end(), n.begin(), ::toupper);
 #define lower(n)        transform(n.begin(), n.end(), n.begin(), ::tolower);
@@ -45,7 +45,16 @@ ll fun(ll n)
 /* Start Your CODE*/
 void solve()
 {
-    
+    ll a, b, c;
+    cin >> a >> b >> c;
+
+    for(ll i=a; i<=b; i++){
+        if(!(i % c)){
+            cout << i << endl;
+            return;
+        }
+    }
+    cout << -1 << endl;
 }
 /* Start Your MAIN*/
 int main()
@@ -73,5 +82,4 @@ void sieve (vector<ll>&v)
         }
     }
 }
-
 
