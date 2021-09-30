@@ -1,4 +1,4 @@
-//              بسم الله الرحمن الرحيم 
+//       || اقْرَأْ بِاسْمِ رَبِّكَ الَّذِى خَلَقَ|| بسم الله الرحمن الرحيم  
 #include<bits/stdc++.h>
 using namespace std;
 #define ll              long long
@@ -32,8 +32,7 @@ void sieve (vector<ll>&v){v.assign(MX, 0);v[0] = v[1] = 1;for (int i=4; i<=MX; i
 /* Start Your CODE*/
 void solve()
 {
-    ll n = 100101;
-    cout << to_String(n) << endl;
+    
 }
 /* Start Your FUN*/
 ll fun(ll n)
@@ -55,5 +54,3 @@ int main()
     */
     return 0;
 }
-
-
