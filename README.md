@@ -1,2 +1,2 @@
 
-https://github-readme-stats.vercel.app/api?Tahsin000 %20&theme=radical)
+![Guthub Status](https://github-readme-stats.vercel.app/api/top-langs?username=Tahsin000&show_icons=true&locale=en&layout=compact)
