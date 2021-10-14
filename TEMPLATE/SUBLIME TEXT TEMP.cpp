@@ -52,5 +52,6 @@ int main()
     test
     fun();
     */
+    cerr << "Time takeen : " << (float)clock()/CLOCKS_PER_SEC << " secs\n"; 
     return 0;
 }
