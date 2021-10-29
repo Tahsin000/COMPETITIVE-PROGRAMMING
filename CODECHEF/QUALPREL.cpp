@@ -32,6 +32,7 @@ void sieve (vector<ll>&v){v.assign(MX, 0);v[0] = v[1] = 1;for (int i=4; i<=MX; i
 /* Start Your CODE*/
 void solve()
 {
+    // Fri Oct 29 12:00:46 2021
     ll n, k; cin >> n >> k;
     vector<ll>v(n); for(auto &x : v) cin >> x;
     sort(all(v)); // 3 5 2 4 5 -> 5 5 4 3 2
@@ -57,4 +58,3 @@ int main()
     // cerr << "Time takeen : " << (float)clock()/CLOCKS_PER_SEC << " secs\n";time_t ttime = time(0); char* dt = ctime(&ttime);cerr << dt << endl;
     return 0;
 }
-
