@@ -1,6 +1,6 @@
 {
 
-	"": {
+	"includ": {
 		"prefix": "tahsin",
 		"body": [
 		  "//       || اقْرَأْ بِاسْمِ رَبِّكَ الَّذِى خَلَقَ|| بسم الله الرحمن الرحيم  ",
@@ -62,28 +62,28 @@
 		],
 		"description": ""
 	  }, 
-	  "": {
+	  "vector": {
 		"prefix": "vector",
 		"body": [
 		  "vector<ll>v(n);",
 		],
 		"description": ""
 	  }, 
-	  "": {
+	  "map": {
 		"prefix": "map",
 		"body": [
 			"map<ll, ll>mp;"
 		],
 		"description": ""
 	  }, 
-	  "": {
+	  "set": {
 		"prefix": "set",
 		"body": [
 			"set<ll>st;"
 		],
 		"description": ""
 	  }, 
-	  "": {
+	  "find": {
 		"prefix": "find",
 		"body": [
 			"find(all(v), m)"
