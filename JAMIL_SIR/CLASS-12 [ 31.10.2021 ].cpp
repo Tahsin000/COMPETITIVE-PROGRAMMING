@@ -2,13 +2,16 @@
 #include<bits/stdc++.h>
 using namespace std;
 #define ll              long long
+typedef pair<ll , ll>   pii;
 void INPUT(){
     ios_base::sync_with_stdio(false); cin.tie(NULL); 
     #ifndef ONLINE_JUDGE 
     freopen("inputf.in", "r", stdin); freopen("outputf.in", "w", stdout); 
     #endif
 }
-
+/* 
+BFS diye ki ki Problem solve kora jai : https://youtu.be/D7385Umsw4I?t=3883
+ */
 void BFS_TESTING(){
     // Sat Nov 06 22:18:49 2021
     /* 
@@ -125,14 +128,95 @@ void SHORTEST_PATH(){
     cout << endl;
 }
 
+ll n, m; 
+std::vector<string> grid;
+bool IsValid(ll x, ll y){
+    return x < n && x >= 0 && y < m && y >= 0 && grid[x][y] != '#';
+}
+
+void DFS_2D_GRID_PROBLEM(){
+    // PROBLEM : https://youtu.be/D7385Umsw4I?t=3720
+    cin >> n >> m;
+    grid = vector<string>(n);
+    pii s, d;
+    for(ll i=0; i<n; i++){
+        cin >> grid[i];
+        for(ll j=0; j<m; j++){
+            if (grid[i][j] == 'S'){
+                s.first = i;
+                s.second = j;
+            }
+            if (grid[i][j] == 'D'){
+                d.first = i;
+                d.second = j;
+            }
+        }
+    }
+    ll level[120][120];
+    memset(level, -1, sizeof(level));
+
+    // move up (i - 1) , down (i + 1), back (j - 1), front(j + 1)
+    ll dx [] = {-1 , 1, 0, 0};
+    ll dy [] = {0 , 0, -1, 1};
+
+    level[s.first][s.second] = 0;
+    queue<pii>Q;
+    Q.push(s);
+    while(!Q.empty()){
+        pii u = Q.front();
+        Q.pop();
+        for(ll i=0; i<4; i++){
+            pii v = {u.first + dx[i] , u.second + dy[i]};
+            if (level[v.first][v.second] == -1 && IsValid(v.first, v.second)){
+                level[v.first][v.second] = level[u.first][u.second] + 1;
+                Q.push(v);
+            }
+        }
+    }
+
+    /*
+    print TEST
+    for(ll i=0; i<n; i++){
+        for(ll j=0; j<m; j++){
+            printf("%3d", level[i][j]);
+        }
+        cout << endl;
+    }
+    */
+/*
+_____________________________________
+** input - TEST CASE(01) **
+5 5
+.....
+..#.S
+..#..
+D....
+..... 
+** output - 01 ** 
+6
+______________________________________
+** input - TEST CASE(02) **
+5 5
+.....
+.D#.S
+..#..
+.....
+..... 
+** output - 01 ** 
+5
+*/
+    //2D_GRID_ shortest distance
+    cout << level[d.first][d.second] << endl; 
+}
+
 int main()
 {
     INPUT();
     
+    DFS_2D_GRID_PROBLEM();
     // SHORTEST_PATH();
     // BFS_TESTING()
     
 
     return 0;
 }
-
