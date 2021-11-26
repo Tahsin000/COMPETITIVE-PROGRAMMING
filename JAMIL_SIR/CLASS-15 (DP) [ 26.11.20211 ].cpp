@@ -13,6 +13,7 @@ using namespace std;
     1. memoizition 
     2. overlapping subproblems 
     3. optimal substructure 
+    
 **** HOME_WORK ****
     https://codeforces.com/group/MWSDmqGsZm/contest/223339/problem/V
     https://codeforces.com/group/MWSDmqGsZm/contest/223339/problem/X
