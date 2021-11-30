@@ -48,3 +48,16 @@ int main()
     Knapsack();
     return 0;
 }
+
+/*
+
+input 
+6 15
+6 5
+5 6
+6 4
+6 6
+3 5
+
+
+*/
