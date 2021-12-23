@@ -32,15 +32,16 @@ void sieve (vector<ll>&v){v.assign(MX, 0);v[0] = v[1] = 1;for (int i=4; i<=MX; i
 std::vector< vector<ll> > adj;
 std::vector<ll> vis;
 bool Check = 0;
-
+vector<ll>TOPOLOGICAL_SORT_ANS;
 void DFSmain(ll s){
     vis[s] = 1;
-    cout << s << " ";
+    // cout << s << " ";
     for(auto v : adj[s]){
         if (!vis[v]){
             DFSmain(v);
         }
     }
+    TOPOLOGICAL_SORT_ANS.pb(s);
 }
 
 void DFS(){
@@ -83,9 +84,21 @@ void TOPOLOGICAL_SORT(){
 /*    ____________________________________
     TOPOLOGICAL SORT can never be applied ( TOPOLOGICAL_SORT কখন  apply করা যাবে না )
     : LINK - GRAPH (When the graph will remain as is) : 
-
     https://i.ibb.co/hcTKKXh/image.png
 */
+    ll node, edge; cin >> node >> edge;
+    adj = vector< vector<ll> > (node + 1);
+    vis = vector<ll> (node+1, 0);
+    for(ll i=0; i<=edge; i++){
+        ll u, v; cin >> u >> v;
+        adj[u].push_back(v);
+    }
+    for(ll i=1; i<=node; i++){
+        if (vis[i] == 0)
+            DFSmain(i);
+    }
+    reverse(all(TOPOLOGICAL_SORT_ANS));
+    for(auto x : TOPOLOGICAL_SORT_ANS) cout << x << " ";
 }
 void GRAPH_COMPLEMENT_COUNT(){
     /*
@@ -114,9 +127,8 @@ void GRAPH_COMPLEMENT_COUNT(){
 int main()
 {
     faster
-    GRAPH_COMPLEMENT_COUNT();
-
-    // TOPOLOGICAL_SORT();
+    // GRAPH_COMPLEMENT_COUNT();
+    TOPOLOGICAL_SORT();
     // FINDING_CYCLE();
     // DFS();
 
@@ -128,6 +140,19 @@ int main()
 
 
 /*
+
+TOPOLOGICAL_SORT
+::: INPUT :::
+ 5 4
+1 2
+3 2
+2 4
+2 5
+
+::: OUTPUT :::
+3 1 2 5 4 
+____________________________________
+
 ____________________________________
 input DFSmain
 9 8
